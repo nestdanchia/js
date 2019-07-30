@@ -6,104 +6,57 @@
         <meta charset="UTF-8">
 
         <title>Manejo del DOM</title>
+        <style>
+ .bt1{padding:6px;}
+.bt2{padding:6px;border-radius:10px;}
+.bt3{padding:6px;border-radius:50%;}
+.btr{background-color:red;color:white;}
+.btx{background-color:white;border:2px solid red;color:red;}
+.btb{background-color:blue;color:white;width:120px;}
+.btg{background-color:green;color:white;font-size:1.2em;padding:12px;}
+</style>
+        <script src="micodigo.js"></script>
 
-        <script>
-        // Crear nodo de tipo Element
-        window.onload=function () {
-            crear();
-            function crear() {
-                var parrafo = document.createElement("p");
-
-// Crear nodo de tipo Text
-var contenido = document.createTextNode("Texto del Nuevo Parrafo!");
-
-// Añadir el nodo Text como hijo del nodo Element
-parrafo.appendChild(contenido);
-
-// Añadir el nodo Element como hijo de la pagina
-document.body.appendChild(parrafo);
-
-            }
-        }
-
-function getAllParaElems()
-{
-  var allParas = document.getElementsByTagName("p");
-console.log('allParas:',[...allParas]);
-  var num = allParas.length;
-  
-   for (let index = 0; index < num; index++) {
-
-      alert("Hay " + num + " <p> elementos en este documento"+"Aceptar para ver el texto :"+allParas[index].textContent);
-  //console.log('text', [...allParas[index].textContent]);
-    }
-  
-}
-
-
-function div1ParaElems()
-{
-  var div1 = document.getElementById("div1")
-  var div1Paras = div1.getElementsByTagName("p");
-
-  var num = div1Paras.length;
-  alert("Hay " + num + " <p> elementos en el elemento div1");
-  for (let index = 0; index < num; index++) {
-
-      alert("Aceptar para ver el texto :"+div1Paras[index].textContent);
-  console.log('text', div1Paras[index].textContent);
-    }
-
-  
-}
-
-
-function div2ParaElems()
-{
-  var div2 = document.getElementById("div2")
-  var div2Paras = div2.getElementsByTagName("p");
-
-  var num = div2Paras.length;
-  alert("Hay " + num + " <p> elementos en el elemento div2");
-for (let index = 0; index < num; index++) {
-
-      alert("Aceptar para ver el texto :"+div2Paras[index].textContent);
-  console.log('text', div2Paras[index].textContent);
-    }
-  
-}
-
-</script>
     </head>
-
+    <header>
+        <hgroup>
+            <h1>DOM</h1>
+            <h2>Ver lista de parrafos agregar parrafo</h2>
+        </hgroup>
+    </header>
     <body style="border:solid greenyellow 3px">
+    <button class="bt1 btr" onclick="getAllParaElems();">
+        muestra todos los elementos p en el documento</button><br>
+    <button class="bt3 btg" onclick="div1ParaElems();">
+        muestra todos los elementos p en div1</button><br>
+    <button class="bt2 btg" onclick="div2ParaElems();">
+        muestra todos los elementos p en div2</button><br>
 
-        <p>Algo de texto</p>
-        <p>Algo de texto</p>
+    <button class="bt1 btg" onclick="crear();">
+        Agregar parrafo</button>
+
+
+        <p style="color:red">Algo de texto</p>
+        <p style="color:red">Algo de texto</p>
 
         <div id="div1" style="border: solid blue 3px">
             <p>Algo de texto en div1</p>
             <p>Algo de texto en div1</p>
             <p>Algo de texto en div1</p>
-
-            <div id="div2" style="border: solid red 3px">
-                <p>Algo de texto en div2</p>
-                <p>Algo de texto en div2</p>
-            </div>
+        </div>
+        <div id="div2" style="border: solid red 3px">
+            <p>Algo de texto en div2</p>
+            <p>Algo de texto en div2</p>
         </div>
 
-        <p>Algo de texto</p>
-        <p>Algo de texto</p>
 
-        <button onclick="getAllParaElems();">
-            muestra todos los elementos p en el documento</button><br />
 
-        <button onclick="div1ParaElems();">
-            muestra todos los elementos p en div1</button><br />
+        <p style="color:red" Algo de texto</p>
 
-        <button onclick="div2ParaElems();">
-            muestra todos los elementos p en div2</button>
 
+
+   
+    
     </body>
 
 </html>
